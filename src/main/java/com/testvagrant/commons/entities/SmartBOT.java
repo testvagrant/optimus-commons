@@ -30,6 +30,15 @@ public class SmartBOT {
     private AppiumDriver driver;
     private RunsOn runsOn;
     private Scenario scenario;
+    private String appPackageName;
+
+    public String getAppPackageName() {
+        return appPackageName;
+    }
+
+    public void setAppPackageName(String appPackageName) {
+        this.appPackageName = appPackageName;
+    }
 
     public Scenario getScenario() {
         return scenario;
