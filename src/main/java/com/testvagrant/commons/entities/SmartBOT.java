@@ -28,7 +28,7 @@ public class SmartBOT {
     private AppiumDriverLocalService appiumService;
     private DeviceState deviceState;
     private AppiumDriver driver;
-    private RunsOn runsOn;
+    private String runsOn;
     private Scenario scenario;
     private String appPackageName;
 
@@ -48,11 +48,11 @@ public class SmartBOT {
         this.scenario = scenario;
     }
 
-    public RunsOn getRunsOn() {
+    public String getRunsOn() {
         return runsOn;
     }
 
-    public void setRunsOn(RunsOn runsOn) {
+    public void setRunsOn(String runsOn) {
         this.runsOn = runsOn;
     }
 

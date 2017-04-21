@@ -19,7 +19,7 @@ public class ScenarioHelper {
         String scenarioNameString = matcher.group(3);
         if (Character.isDigit(scenarioNameString.charAt(scenarioNameString.length() - 1))) {
             String outlineCount = scenarioNameString.split(";;")[1];
-            return scenarioNameString.split(";;")[0] + "-" + outlineCount;
+            return scenarioNameString.split(";;")[0] + "-" + (Integer.parseInt(outlineCount) - 1);
         }
         return scenarioNameString;
     }
