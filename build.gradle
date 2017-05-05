@@ -17,6 +17,6 @@ ext.cukesVersion = '1.2.5'
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compile group: 'info.cukes', name: 'cucumber-core', version: "$cukesVersion"
-
+    compile group: 'org.json', name: 'json', version: '20160810'
     compile 'io.appium:java-client:4.0.0'
 }
