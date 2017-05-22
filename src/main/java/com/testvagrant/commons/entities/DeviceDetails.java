@@ -27,7 +27,6 @@ public class DeviceDetails {
     private String platform;
     private String platformVersion;
     private String runsOn;
-    private Date buildStartTime;
 
 
     public String getDeviceName() {
@@ -78,14 +77,6 @@ public class DeviceDetails {
         this.runsOn = runsOn;
     }
 
-    public Date getBuildStartTime() {
-        return buildStartTime;
-    }
-
-    public void setBuildStartTime(Date buildStartTime) {
-        this.buildStartTime = buildStartTime;
-    }
-
     @Override
     public String toString() {
         return "DeviceDetails{" +
@@ -95,7 +86,6 @@ public class DeviceDetails {
                 ", platform=" + platform +
                 ", platformVersion='" + platformVersion + '\'' +
                 ", runsOn=" + runsOn +
-                ", buildStartTime=" + buildStartTime +
                 '}';
     }
 }
