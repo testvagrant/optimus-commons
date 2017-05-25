@@ -26,7 +26,6 @@ public class SmartBOT {
     private DesiredCapabilities capabilities;
     private String deviceUdid;
     private AppiumDriverLocalService appiumService;
-    private DeviceState deviceState;
     private AppiumDriver driver;
     private String runsOn;
     private Scenario scenario;
@@ -72,14 +71,6 @@ public class SmartBOT {
         this.deviceUdid = deviceUdid;
     }
 
-    public DeviceState getDeviceState() {
-        return deviceState;
-    }
-
-    public void setDeviceState(DeviceState deviceState) {
-        this.deviceState = deviceState;
-    }
-
     public String getBelongsTo() {
         return belongsTo;
     }
@@ -96,7 +87,6 @@ public class SmartBOT {
         this.capabilities = capabilities;
     }
 
-
     public AppiumDriver getDriver() {
         return driver;
     }
@@ -104,7 +94,6 @@ public class SmartBOT {
     public void setDriver(AppiumDriver driver) {
         this.driver = driver;
     }
-
 
     public boolean isAnAndroidEmulator() {
         return (deviceUdid.startsWith("emulator") || deviceUdid.contains("vbox"));
