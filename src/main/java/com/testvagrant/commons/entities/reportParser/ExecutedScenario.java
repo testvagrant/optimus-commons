@@ -7,6 +7,15 @@ public class ExecutedScenario {
     private String deviceName;
     private String id;
     private List<Step> steps;
+    private byte[] embeddedFailedScreen;
+
+    public byte[] getEmbeddedFailedScreen() {
+        return embeddedFailedScreen;
+    }
+
+    public void setEmbeddedFailedScreen(byte[] embeddedFailedScreen) {
+        this.embeddedFailedScreen = embeddedFailedScreen;
+    }
 
     public String getId() {
         return id;
