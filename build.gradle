@@ -19,4 +19,6 @@ dependencies {
     compile group: 'info.cukes', name: 'cucumber-core', version: "$cukesVersion"
     compile group: 'org.json', name: 'json', version: '20160810'
     compile 'io.appium:java-client:4.0.0'
+    compile group: 'org.codehaus.jackson', name: 'jackson-jaxrs', version: '1.8.5'
+
 }
