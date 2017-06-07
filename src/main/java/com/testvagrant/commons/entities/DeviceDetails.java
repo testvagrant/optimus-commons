@@ -74,13 +74,14 @@ public class DeviceDetails {
         this.status = status;
     }
 
-    public String getDeviceUdid() {
+    public String getUdid() {
         return udid;
     }
 
-    public void setDeviceUdid(String deviceUdid) {
-        this.udid = deviceUdid;
+    public void setUdid(String udid) {
+        this.udid = udid;
     }
+
     @Override
     public String toString() {
         return "DeviceDetails{" +
