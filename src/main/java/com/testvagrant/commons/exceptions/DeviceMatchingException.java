@@ -18,7 +18,7 @@ package com.testvagrant.commons.exceptions;
 
 public class DeviceMatchingException extends OptimusException {
 
-    public DeviceMatchingException(String condition) {
-        super(String.format("Could not find a device matching condition %s",condition));
+    public DeviceMatchingException(String message) {
+        super(message);
     }
 }
