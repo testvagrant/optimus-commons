@@ -16,9 +16,9 @@
 
 package com.testvagrant.commons.exceptions;
 
-public class DeviceMatchingException extends OptimusException {
+public class NoSuchPlatformException extends OptimusException {
 
-    public DeviceMatchingException(String condition) {
-        super(String.format("Could not find a device matching condition %s",condition));
+    public NoSuchPlatformException(String platform) {
+        super(String.format("Platform %s does not exist. Platform can be either Android or IOS",platform));
     }
 }

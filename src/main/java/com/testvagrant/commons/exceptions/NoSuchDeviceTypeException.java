@@ -16,9 +16,12 @@
 
 package com.testvagrant.commons.exceptions;
 
-public class DeviceMatchingException extends OptimusException {
+/**
+ * Created by krishnanand on 08/06/17.
+ */
+public class NoSuchDeviceTypeException extends OptimusException {
 
-    public DeviceMatchingException(String condition) {
-        super(String.format("Could not find a device matching condition %s",condition));
+    public NoSuchDeviceTypeException(String deviceType) {
+        super(String.format("Device type %s, does not exist. DeviceType should be of either; any, emulator,simulator or device.",deviceType));
     }
 }
