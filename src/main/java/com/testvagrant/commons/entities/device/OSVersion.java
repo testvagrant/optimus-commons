@@ -19,8 +19,11 @@ package com.testvagrant.commons.entities.device;
 
 public interface OSVersion {
 
+    void setVersion(String osVersion);
 
-    double getVersion();
+    double getBaseVersion();
+
+    String getVersion();
 
     String getName();
 
