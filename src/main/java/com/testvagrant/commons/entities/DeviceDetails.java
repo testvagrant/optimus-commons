@@ -17,17 +17,22 @@
 package com.testvagrant.commons.entities;
 
 
-import java.util.Date;
+import com.testvagrant.commons.entities.device.DeviceType;
+import com.testvagrant.commons.entities.device.OSVersion;
+import com.testvagrant.commons.entities.device.Platform;
+import com.testvagrant.commons.entities.device.Status;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DeviceDetails {
 
     private String deviceName;
+    private Platform platform;
+    private OSVersion osVersion;
+    private DeviceType deviceType;
+    private Status status;
     private String udid;
-    private String status;
-    private String platform;
-    private String platformVersion;
-    private String runsOn;
-
 
     public String getDeviceName() {
         return deviceName;
@@ -35,6 +40,38 @@ public class DeviceDetails {
 
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
+    }
+
+    public Platform getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(Platform platform) {
+        this.platform = platform;
+    }
+
+    public OSVersion getOsVersion() {
+        return osVersion;
+    }
+
+    public void setOsVersion(OSVersion osVersion) {
+        this.osVersion = osVersion;
+    }
+
+    public DeviceType getDeviceType() {
+        return deviceType;
+    }
+
+    public void setDeviceType(DeviceType deviceType) {
+        this.deviceType = deviceType;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public String getUdid() {
@@ -45,38 +82,6 @@ public class DeviceDetails {
         this.udid = udid;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getPlatformVersion() {
-        return platformVersion;
-    }
-
-    public void setPlatformVersion(String platformVersion) {
-        this.platformVersion = platformVersion;
-    }
-
-    public String getPlatform() {
-        return platform;
-    }
-
-    public void setPlatform(String platform) {
-        this.platform = platform;
-    }
-
-    public String getRunsOn() {
-        return runsOn;
-    }
-
-    public void setRunsOn(String runsOn) {
-        this.runsOn = runsOn;
-    }
-
     @Override
     public String toString() {
         return "DeviceDetails{" +
@@ -84,8 +89,8 @@ public class DeviceDetails {
                 ", udid='" + udid + '\'' +
                 ", status='" + status + '\'' +
                 ", platform=" + platform +
-                ", platformVersion='" + platformVersion + '\'' +
-                ", runsOn=" + runsOn +
+                ", platformVersion='" + osVersion.getVersion() + '\'' +
+                ", runsOn=" + deviceType.name() +
                 '}';
     }
 }
