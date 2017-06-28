@@ -20,5 +20,9 @@ dependencies {
     compile group: 'org.json', name: 'json', version: '20160810'
     compile 'io.appium:java-client:4.0.0'
     compile group: 'org.codehaus.jackson', name: 'jackson-jaxrs', version: '1.8.5'
-
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.0.pr4'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.0.pr4'
+    compile group: 'info.cukes', name: 'cucumber-junit', version: "$cukesVersion"
+    compile group: 'info.cukes', name: 'cucumber-core', version: "$cukesVersion"
+    compile group: 'info.cukes', name: 'cucumber-java8', version: "$cukesVersion"
 }
