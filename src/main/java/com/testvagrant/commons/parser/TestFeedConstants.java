@@ -14,29 +14,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.testvagrant.commons.exceptions;
-
+package com.testvagrant.commons.parser;
 
 /**
- * Created by abhishek on 14/06/17.
+ * Created by abhishek on 30/05/17.
  */
-public class Exceptions {
-    private String stacktrace;
-    private String activityName;
-
-    public String getActivityName() {
-        return activityName;
-    }
-
-    public void setActivityName(String activityName) {
-        this.activityName = activityName;
-    }
-
-    public String getStacktrace() {
-        return stacktrace;
-    }
-
-    public void setStacktrace(String stacktrace) {
-        this.stacktrace = stacktrace;
-    }
+public interface TestFeedConstants {
+    String EXEC_DETAILS="executionDetails";
+    String APPIUM_JS_PATH="appium_js_path";
+    String APPIUM_NODE_PATH="appium_node_path";
+    String TEST_FEED = "testFeed";
+    String SAUCE = "sauce";
+    String SAUCE_USER_NAME = "sauceUserName";
+    String SAUCE_ACCESS_KEY = "sauceAccessKey";
+    String MONITORING = "monitoring";
+    String BELONGS_TO = "belongsTo";
+    String OPTIMUS_DESIRED_CAPABILITIES = "optimusDesiredCapabilities";
+    String APPIUM_SERVER_CAPABILITIES = "appiumServerCapabilities";
+    String PLATFORM_NAME = "platformName";
+    String APP = "app";
 }
