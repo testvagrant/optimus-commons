@@ -2,14 +2,15 @@ group 'com.testvagrant.optimus-commons'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
-apply plugin: 'maven-publish'
 apply plugin: 'maven'
+apply plugin: 'groovy'
 apply plugin: 'signing'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 ext.cukesVersion = '1.2.5'
@@ -52,7 +53,7 @@ version = "1.0.0"
 
 uploadArchives {
     repositories {
-        MavenDeployer {
+        mavenDeployer {
             beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
             repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
@@ -76,12 +77,12 @@ uploadArchives {
                     url 'https://bitbucket.org/testvagrant/optimus-commons'
                 }
 
-//                licenses {
-//                    license {
-//                        name 'The Apache License, Version 2.0'
-//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-//                    }
-//                }
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
                 developers {
                     developer {
                         id 'sukesh'
