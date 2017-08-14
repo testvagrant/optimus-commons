@@ -17,14 +17,36 @@
 package com.testvagrant.commons.entities.device;
 
 
-public interface OSVersion {
+public class OSVersion {
 
-    void setVersion(String osVersion);
+    private String version;
 
-    double getBaseVersion();
+    private String name;
 
-    String getVersion();
+    private double baseVersion;
 
-    String getName();
 
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBaseVersion(double baseVersion) {
+        this.baseVersion = baseVersion;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getBaseVersion() {
+        return baseVersion;
+    }
 }

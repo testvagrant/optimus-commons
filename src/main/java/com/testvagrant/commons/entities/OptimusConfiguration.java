@@ -20,8 +20,8 @@ package com.testvagrant.commons.entities;
 public class OptimusConfiguration {
 
     private String elementsFormat;
-
     private int mongoPort;
+    private String mongoURI;
 
     public String getElementsFormat() {
         return elementsFormat;
@@ -29,6 +29,14 @@ public class OptimusConfiguration {
 
     public void setElementsFormat(String elementsFormat) {
         this.elementsFormat = elementsFormat;
+    }
+
+    public String getMongoURI() {
+        return mongoURI;
+    }
+
+    public void setMongoURI(String mongoURI) {
+        this.mongoURI = mongoURI;
     }
 
     public int getMongoPort() {
