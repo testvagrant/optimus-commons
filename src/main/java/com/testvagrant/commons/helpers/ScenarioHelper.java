@@ -17,6 +17,7 @@
 package com.testvagrant.commons.helpers;
 
 import cucumber.api.Scenario;
+import org.apache.commons.io.FilenameUtils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -40,10 +41,25 @@ public class ScenarioHelper {
         return scenarioNameString;
     }
 
+//    private Matcher getMatcher() {
+//        Pattern p = Pattern.compile("((.*?);)(.*)(;;[0-9+])?");
+//        Matcher matcher = p.matcher(scenario.getId());
+//
+//        matcher.find();
+//        return matcher;
+//    }
+
     private Matcher getMatcher() {
         Pattern p = Pattern.compile("((.*?);)(.*)(;;[0-9+])?");
-        Matcher matcher = p.matcher(scenario.getId());
+        String id = scenario.getId();
+        String[] split = id.split(":");
+        String featureName = FilenameUtils.getBaseName(split[0]);
+        String lineNumber = split[1];
+        String name = scenario.getName();
+        String input = featureName + ";" + name + ";;" + lineNumber;
+        Matcher matcher = p.matcher(input);
 
+        System.out.println("unique scenario name -- " + input);
         matcher.find();
         return matcher;
     }
