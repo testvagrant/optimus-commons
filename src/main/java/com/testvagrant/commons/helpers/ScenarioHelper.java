@@ -22,6 +22,8 @@ import org.apache.commons.io.FilenameUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 public class ScenarioHelper {
 
     private Scenario scenario;
@@ -29,26 +31,19 @@ public class ScenarioHelper {
 
     public ScenarioHelper(Scenario scenario) {
         this.scenario = scenario;
-        matcher = getMatcher();
+//        matcher = getMatcher();
     }
 
     public String getUniqueScenarioName() {
-        String scenarioNameString = matcher.group(3);
-        if (Character.isDigit(scenarioNameString.charAt(scenarioNameString.length() - 1))) {
-            String outlineCount = scenarioNameString.split(";;")[1];
-            return scenarioNameString.split(";;")[0] + "-" + (Integer.parseInt(outlineCount) - 1);
-        }
+        System.out.println("Scenario id -- " + scenario.getId());
+        System.out.println("Scenario Name -- " + scenario.getName());
+//        return scenario.getName();
+        checkNotNull(scenario);
+        String scenarioNameString = getScenarioName()+"-"+getLineNumber();
         return scenarioNameString;
     }
 
-//    private Matcher getMatcher() {
-//        Pattern p = Pattern.compile("((.*?);)(.*)(;;[0-9+])?");
-//        Matcher matcher = p.matcher(scenario.getId());
-//
-//        matcher.find();
-//        return matcher;
-//    }
-
+    @Deprecated
     private Matcher getMatcher() {
         Pattern p = Pattern.compile("((.*?);)(.*)(;;[0-9+])?");
         String id = scenario.getId();
@@ -64,6 +59,21 @@ public class ScenarioHelper {
         return matcher;
     }
 
+    //Getting line number from the uri string with changes according to cucumber 2.0.1
+    private String getLineNumber() {
+        String id = scenario.getId();
+        if(id.contains(":")){
+            String[] uriArray = id.split(":");
+            if(uriArray.length>1) {
+                return uriArray[1];
+            }
+        }
+        throw new RuntimeException("Cannot extract line number from the String."+scenario.getId());
+    }
+
+    private String getScenarioName() {
+        return scenario.getName().replaceAll(" ","-");
+    }
 
     public String getParentFeatureName() {
         return matcher.group(2);

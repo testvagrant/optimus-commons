@@ -1,5 +1,5 @@
 group 'com.testvagrant.optimus-commons'
-version '1.0.2-SNAPSHOT'
+version '1.0.3-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'maven'
@@ -13,84 +13,83 @@ repositories {
     jcenter()
 }
 
-ext.cukesVersion = '1.2.5'
+ext.cukesVersion = '2.0.1'
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile group: 'info.cukes', name: 'cucumber-core', version: "$cukesVersion"
     compile group: 'org.json', name: 'json', version: '20160810'
     compile 'io.appium:java-client:4.0.0'
     compile group: 'org.codehaus.jackson', name: 'jackson-jaxrs', version: '1.8.5'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.0.pr4'
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.0.pr4'
-    compile group: 'info.cukes', name: 'cucumber-junit', version: "$cukesVersion"
-    compile group: 'info.cukes', name: 'cucumber-core', version: "$cukesVersion"
-    compile group: 'info.cukes', name: 'cucumber-java8', version: "$cukesVersion"
+    compile group: 'io.cucumber', name: 'cucumber-junit', version: "$cukesVersion"
+    compile group: 'io.cucumber', name: 'cucumber-core', version: "$cukesVersion"
+    compile group: 'io.cucumber', name: 'cucumber-java8', version: "$cukesVersion"
 }
 
 
-task javadocJar(type: Jar) {
-    classifier = 'javadoc'
-    from javadoc
-}
-
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-artifacts {
-    archives javadocJar, sourcesJar
-}
-
+//task javadocJar(type: Jar) {
+//    classifier = 'javadoc'
+//    from javadoc
+//}
+//
+//task sourcesJar(type: Jar) {
+//    classifier = 'sources'
+//    from sourceSets.main.allSource
+//}
+//
+//artifacts {
+//    archives javadocJar, sourcesJar
+//}
+//
 //signing {
 //    sign configurations.archives
 //}
-
-group = "com.testvagrant.optimus-commons"
-archivesBaseName = "optimus-commons"
-version = "1.0.3"
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name 'Optimus Commons'
-                packaging 'jar'
-                // optionally artifactId can be defined here
-                description 'The common library project for optimus studio'
-                url 'https://github.com/testvagrant/optimus-commons'
-
-                scm {
-                    connection 'scm:https://github.com/testvagrant/optimus-commons.git'
-//                    developerConnection 'scm:svn:https://foo.googlecode.com/svn/trunk/'
-                    url 'https://github.com/testvagrant/optimus-commons'
-                }
-
-                licenses {
-                    license {
-                        name 'The Apache License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id 'sukesh'
-                        name 'Sukesh Kumar'
-                        email 'sukesh@testvagrant.com'
-                    }
-                }
-            }
-        }
-    }
-}
+//
+//group = "com.testvagrant.optimus-commons"
+//archivesBaseName = "optimus-commons"
+//version = "1.0.0"
+//
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//
+//            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+//                authentication(userName: ossrhUsername, password: ossrhPassword)
+//            }
+//
+//            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+//                authentication(userName: ossrhUsername, password: ossrhPassword)
+//            }
+//
+//            pom.project {
+//                name 'Optimus Commons'
+//                packaging 'jar'
+//                // optionally artifactId can be defined here
+//                description 'The common library project for optimus studio'
+//                url 'https://bitbucket.org/testvagrant/optimus-commons'
+//
+//                scm {
+//                    connection 'scm:https://sukesh_testvagrant@bitbucket.org/testvagrant/optimus-commons.git'
+////                    developerConnection 'scm:svn:https://foo.googlecode.com/svn/trunk/'
+//                    url 'https://bitbucket.org/testvagrant/optimus-commons'
+//                }
+//
+//                licenses {
+//                    license {
+//                        name 'The Apache License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id 'sukesh'
+//                        name 'Sukesh Kumar'
+//                        email 'sukesh@testvagrant.com'
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
