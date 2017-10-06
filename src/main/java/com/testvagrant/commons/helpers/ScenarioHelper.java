@@ -39,7 +39,7 @@ public class ScenarioHelper {
         System.out.println("Scenario Name -- " + scenario.getName());
 //        return scenario.getName();
         checkNotNull(scenario);
-        String scenarioNameString = getScenarioName()+"-"+getLineNumber();
+        String scenarioNameString = getScenarioName() + "-" + getLineNumber();
         return scenarioNameString;
     }
 
@@ -62,17 +62,17 @@ public class ScenarioHelper {
     //Getting line number from the uri string with changes according to cucumber 2.0.1
     private String getLineNumber() {
         String id = scenario.getId();
-        if(id.contains(":")){
+        if (id.contains(":")) {
             String[] uriArray = id.split(":");
-            if(uriArray.length>1) {
+            if (uriArray.length > 1) {
                 return uriArray[1];
             }
         }
-        throw new RuntimeException("Cannot extract line number from the String."+scenario.getId());
+        throw new RuntimeException("Cannot extract line number from the String." + scenario.getId());
     }
 
     private String getScenarioName() {
-        return scenario.getName().replaceAll(" ","-");
+        return scenario.getName().replaceAll(" ", "-");
     }
 
     public String getParentFeatureName() {
