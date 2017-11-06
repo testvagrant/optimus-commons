@@ -1,5 +1,5 @@
 group 'com.testvagrant.optimus-commons'
-version '1.0.4'
+version '1.0.5-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'maven'
@@ -11,14 +11,16 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
     jcenter()
+    mavenLocal()
 }
 
-ext.cukesVersion = '2.0.1'
+ext.cukesVersion = '2.1.0'
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compile group: 'org.json', name: 'json', version: '20160810'
-    compile 'io.appium:java-client:4.0.0'
+    compile group: 'io.appium', name: 'java-client', version: '5.0.4'
+
     compile group: 'org.codehaus.jackson', name: 'jackson-jaxrs', version: '1.8.5'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.0.pr4'
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.0.pr4'
@@ -46,50 +48,50 @@ signing {
     sign configurations.archives
 }
 
-group = "com.testvagrant.optimus-commons"
-archivesBaseName = "optimus-commons"
-version = "1.0.4"
+//group = "com.testvagrant.optimus-commons"
+//archivesBaseName = "optimus-commons"
+//version = "1.0.5"
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name 'Optimus Commons'
-                packaging 'jar'
-                // optionally artifactId can be defined here
-                description 'The common library project for optimus studio'
-                url 'https://github.com/testvagrant/optimus-commons'
-
-                scm {
-                    connection 'scm:https://github.com/testvagrant/optimus-commons.git'
-//                    developerConnection 'scm:svn:https://foo.googlecode.com/svn/trunk/'
-                    url 'https://github.com/testvagrant/optimus-commons'
-                }
-
-                licenses {
-                    license {
-                        name 'The Apache License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id 'sukesh'
-                        name 'Sukesh Kumar'
-                        email 'sukesh@testvagrant.com'
-                    }
-                }
-            }
-        }
-    }
-}
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//
+//            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+//                authentication(userName: ossrhUsername, password: ossrhPassword)
+//            }
+//
+//            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+//                authentication(userName: ossrhUsername, password: ossrhPassword)
+//            }
+//
+//            pom.project {
+//                name 'Optimus Commons'
+//                packaging 'jar'
+//                // optionally artifactId can be defined here
+//                description 'The common library project for optimus studio'
+//                url 'https://github.com/testvagrant/optimus-commons'
+//
+//                scm {
+//                    connection 'scm:https://github.com/testvagrant/optimus-commons.git'
+////                    developerConnection 'scm:svn:https://foo.googlecode.com/svn/trunk/'
+//                    url 'https://github.com/testvagrant/optimus-commons'
+//                }
+//
+//                licenses {
+//                    license {
+//                        name 'The Apache License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id 'sukesh'
+//                        name 'Sukesh Kumar'
+//                        email 'sukesh@testvagrant.com'
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
