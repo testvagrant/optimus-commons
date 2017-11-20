@@ -18,7 +18,6 @@ package com.testvagrant.commons.entities;
 
 
 import com.testvagrant.commons.entities.device.DeviceType;
-import com.testvagrant.commons.entities.device.OSVersion;
 import com.testvagrant.commons.entities.device.Platform;
 import com.testvagrant.commons.entities.device.Status;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
@@ -29,7 +28,7 @@ public class DeviceDetails {
 
     private String deviceName;
     private Platform platform;
-    private OSVersion osVersion;
+    private String osVersion;
     private DeviceType deviceType;
     private Status status;
     private String udid;
@@ -50,11 +49,11 @@ public class DeviceDetails {
         this.platform = platform;
     }
 
-    public OSVersion getOsVersion() {
+    public String getOsVersion() {
         return osVersion;
     }
 
-    public void setOsVersion(OSVersion osVersion) {
+    public void setOsVersion(String osVersion) {
         this.osVersion = osVersion;
     }
 
@@ -89,7 +88,7 @@ public class DeviceDetails {
                 ", udid='" + udid + '\'' +
                 ", status='" + status + '\'' +
                 ", platform=" + platform +
-                ", platformVersion='" + osVersion.getVersion() + '\'' +
+                ", platformVersion='" + osVersion + '\'' +
                 ", runsOn=" + deviceType.name() +
                 '}';
     }
