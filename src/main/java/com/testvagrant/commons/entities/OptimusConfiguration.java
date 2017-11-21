@@ -22,6 +22,7 @@ public class OptimusConfiguration {
     private String elementsFormat;
     private int mongoPort;
     private String mongoURI;
+    private int webDriverWait;
 
     public String getElementsFormat() {
         return elementsFormat;
@@ -45,5 +46,13 @@ public class OptimusConfiguration {
 
     public void setMongoPort(int mongoPort) {
         this.mongoPort = mongoPort;
+    }
+
+    public int getWebDriverWait() {
+        return webDriverWait;
+    }
+
+    public void setWebDriverWait(int webDriverWait) {
+        this.webDriverWait = webDriverWait;
     }
 }
