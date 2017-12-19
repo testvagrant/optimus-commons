@@ -28,8 +28,8 @@ public class DeviceDetails {
 
     private String deviceName;
     private Platform platform;
-    private String osVersion;
-    private DeviceType deviceType;
+    private String platformVersion;
+    private DeviceType runsOn;
     private Status status;
     private String udid;
 
@@ -49,20 +49,20 @@ public class DeviceDetails {
         this.platform = platform;
     }
 
-    public String getOsVersion() {
-        return osVersion;
+    public String getPlatformVersion() {
+        return platformVersion;
     }
 
-    public void setOsVersion(String osVersion) {
-        this.osVersion = osVersion;
+    public void setPlatformVersion(String platformVersion) {
+        this.platformVersion = platformVersion;
     }
 
-    public DeviceType getDeviceType() {
-        return deviceType;
+    public DeviceType getRunsOn() {
+        return runsOn;
     }
 
-    public void setDeviceType(DeviceType deviceType) {
-        this.deviceType = deviceType;
+    public void setRunsOn(DeviceType runsOn) {
+        this.runsOn = runsOn;
     }
 
     public Status getStatus() {
@@ -88,8 +88,8 @@ public class DeviceDetails {
                 ", udid='" + udid + '\'' +
                 ", status='" + status + '\'' +
                 ", platform=" + platform +
-                ", platformVersion='" + osVersion + '\'' +
-                ", runsOn=" + deviceType.name() +
+                ", platformVersion='" + platformVersion + '\'' +
+                ", runsOn=" + runsOn.name() +
                 '}';
     }
 }
